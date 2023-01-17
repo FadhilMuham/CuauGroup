@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { View, Text ,Image , StyleSheet, SafeAreaView, FlatList, TouchableOpacity} from 'react-native'
 import { Data } from './dummy';
 
+let profiles = [require('./asset/images/profile1.png'), require('./asset/images/profile2.png'), require('./asset/images/profile3.png'), require('./asset/images/profile4.png'), require('./asset/images/profile5.png')];
+
 export default function Telegram() {
     useEffect(() => {
      console.log( Data )
@@ -38,7 +40,7 @@ export default function Telegram() {
                                     <View style={{flexDirection:'row'}}>
                                         <Image 
                                             style={{height:50, width:50, borderRadius: 25}}
-                                            source={item.image}
+                                                source={profiles[item.image-1]}
                                         />
                                         <View style={styles.nameMessage}>
                                             <Text>{item.name}</Text>
